@@ -73,7 +73,7 @@ throwrock = 0
 hasrock = 0
 acc = 0.5
 spd = 1.4
-tex = 36
+tex = tex_mario;
 </string>
           </argument>
         </arguments>
@@ -123,19 +123,19 @@ zspeed = -4
             <string>var ID;
 ID = instance_create(x, y, obj_fade_out)
 ID.rm = -1
-ID.sprite = 158
+ID.sprite = spr_star_logo;
 if (global.World == -1)
     ID.rm = 3
 if (global.Powerup == 0)
-    tex = 38
+    tex = tex_mario_back;
 if (global.Powerup == 1)
-    tex = 44
+    tex = tex_fire_mario_back;
 if (global.Powerup == 2)
-    tex = 49
+    tex = tex_dandelion_mario_back;
 if (global.Powerup == 3)
-    tex = 54
+    tex = tex_mole_mario_back;
 if (global.Powerup == 4)
-    tex = 60
+    tex = tex_super_mole_mario_back;
 yyspeed = -0.5
 </string>
           </argument>
@@ -1215,19 +1215,19 @@ if (key_check_pressed(global.Key_jump) &amp;&amp; collision_point(bbox_left, bbo
     switch global.Powerup
     {
         case 0:
-            tex = 36
+            tex = tex_mario;
             break
         case 1:
-            tex = 42
+            tex = tex_fire_mario;
             break
         case 2:
-            tex = 47
+            tex = tex_dandelion_mario;
             break
         case 3:
-            tex = 52
+            tex = tex_mole_mario;
             break
         case 4:
-            tex = 57
+            tex = tex_super_mole_mario;
             break
     }
 
@@ -1300,9 +1300,9 @@ if move
     {
         if (key_check(global.Key_up) &amp;&amp; (!key_check(global.Key_down)))
         {
-            tex = 38
+            tex = tex_mario_back;
             if (!ground)
-                tex = 39
+                tex = tex_mario_jump_back
         }
         else
         {
