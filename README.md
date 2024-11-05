@@ -1,5 +1,5 @@
 # Paper Mario 3D Land Decompilation
-A WIP Decompilation of Paper Mario 3D Land
+A WIP Decompilation of Paper Mario 3D Land v1.2
 
 Game Status:
 Everything seems to work, but Textures In-Game are messed up
