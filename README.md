@@ -1,2 +1,2 @@
-# Paper-Mario-3DLand-Decompilation
-A Decompilation of Paper Mario 3D Land
+# Paper Mario 3D Land Decompilation
+A WIP Decompilation of Paper Mario 3D Land
