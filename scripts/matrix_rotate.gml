@@ -1,0 +1,21 @@
+var rotate, v1, v2, v3, ca, ca1, sa, result;
+rotate = ds_grid_create(3, 3)
+v1 = ds_list_find_value(argument1, 0)
+v2 = ds_list_find_value(argument1, 1)
+v3 = ds_list_find_value(argument1, 2)
+ca = cos(argument2)
+ca1 = 1 - ca
+sa = sin(argument2)
+ds_grid_set(rotate, 0, 0, (ca + sqr(v1) * ca1))
+ds_grid_set(rotate, 0, 1, (v2 * v1 * ca1 + v3 * sa))
+ds_grid_set(rotate, 0, 2, (v3 * v1 * ca1 - v2 * sa))
+ds_grid_set(rotate, 1, 0, (v1 * v2 * ca1 - v3 * sa))
+ds_grid_set(rotate, 1, 1, (ca + sqr(v2) * ca1))
+ds_grid_set(rotate, 1, 2, (v3 * v2 * ca1 + v1 * sa))
+ds_grid_set(rotate, 2, 0, (v1 * v3 * ca1 + v2 * sa))
+ds_grid_set(rotate, 2, 1, (v2 * v3 * ca1 - v1 * sa))
+ds_grid_set(rotate, 2, 2, (ca + sqr(v3) * ca1))
+result = matrix_multi(rotate, argument0)
+ds_grid_destroy(argument0)
+ds_grid_destroy(rotate)
+return result;

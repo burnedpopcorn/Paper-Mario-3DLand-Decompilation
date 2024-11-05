@@ -1,0 +1,12 @@
+var matrix;
+matrix = ds_grid_create(3, 3)
+ds_grid_copy(matrix, argument0)
+ds_list_replace(argument1, 2, (-(arctan2(ds_grid_get(matrix, 2, 1), ds_grid_get(matrix, 2, 0)))))
+if (ds_list_find_value(argument1, 2) != 0)
+    matrix = matrix_rotate(matrix, global.axis_z, ds_list_find_value(argument1, 2))
+ds_list_replace(argument1, 1, (-(arctan2(ds_grid_get(matrix, 2, 0), ds_grid_get(matrix, 2, 2)))))
+if (ds_list_find_value(argument1, 1) != 0)
+    matrix = matrix_rotate(matrix, global.axis_y, ds_list_find_value(argument1, 1))
+ds_list_replace(argument1, 0, radtodeg((-(arctan2(ds_grid_get(matrix, 0, 1), ds_grid_get(matrix, 0, 0))))))
+ds_list_replace(argument1, 1, radtodeg(ds_list_find_value(argument1, 1)))
+ds_list_replace(argument1, 2, radtodeg(ds_list_find_value(argument1, 2)))
